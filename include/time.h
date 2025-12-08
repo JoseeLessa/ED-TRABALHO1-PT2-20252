@@ -25,6 +25,9 @@ void team_reset_stats(Team *t);
 // --- Add values to goals and match result --- 
 void team_add_match(Team *t, int goals_scored, int goals_conceded);
 
+// --- Remove values from goals and match result ---
+void team_sub_match(Team *t, int goals_scored, int goals_conceded);
+
 // --- Add Name and id to team ---
 void assign_idname(Team *team, int id, char name[]);
 
@@ -56,6 +59,9 @@ int team_balance(Team *t);
 
 // --- Return total points made by a team ---
 int team_points(Team *t);
+
+// --- Team Clone ---
+Team *clone_team(Team *t);
 
 
 // ***** SORTING FUNCTIONS *****
