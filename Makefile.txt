@@ -1,30 +1,43 @@
-# Compilador e flags
+# Nome do executável
+TARGET = programa_groner_jose
+
+# Compilador
 CC = gcc
-CFLAGS = -Wall -Wextra -O2
 
-# Arquivos-fonte e de cabeçalho
-SRC = main.c campeonato.c
-OBJ = $(SRC:.c=.o)
-DEPS = campeonato.h utils.h
+# Flags de compilação
+CFLAGS = -Wall -Wextra -std=c11 -Iinclude
 
-# Nome do executável final
-TARGET = campeonato_gronerjose
+# Diretórios
+SRC_DIR = src
+OBJ_DIR = obj
 
-# Regra padrão: compilar tudo
+# Arquivos fonte
+SRCS = $(SRC_DIR)/main.c \
+       $(SRC_DIR)/time.c \
+       $(SRC_DIR)/bdtimes.c \
+       $(SRC_DIR)/partida.c \
+       $(SRC_DIR)/bdpartidas.c \
+       $(SRC_DIR)/menu.c
+
+# Arquivos objeto (gerados em obj/)
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+# Regra padrão
 all: $(TARGET)
 
-# Como gerar o executávelnmake -f Makefile.win
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(TARGET)
+# Linkagem final
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-# Regra genérica para compilar .c em .o
-%.o: %.c $(DEPS)
+# Compilação dos .c em .o
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Limpeza dos arquivos compilados
+# Limpar arquivos gerados
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -rf $(OBJ_DIR) $(TARGET)
 
 # Rodar o programa
-run: $(TARGET)
+run: all
 	./$(TARGET)
