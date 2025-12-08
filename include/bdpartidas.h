@@ -20,24 +20,29 @@ MNode *create_mnode_with_vals(int id, int id_team1, int id_team2, int goals_team
 // --- Copy node ---
 void append_mnode_copy(BDMatches *bdm, MNode *n);
 
+// --- Remove Node ---
+void explode_mnode_by_id(BDMatches *bdm, int id);
 
 
 // ***** VAR manipulation FUNCTIONS *****
 // --- free memory in pointer p ---
 void delete_all_matches(BDMatches *bdm);
 
+// --- update match values ---
+void update_match_by_id(BDMatches *bdm, int id, int goals1, int goals2);
+
 
 // ***** Printing Functions *****
 // ---  Print Match ---
 void print_match(MNode *ptr, char nome1[], char nome2[]);
 
-// --- Matches by home prefix ---
-void matches_home(BDTeams *bdt, BDMatches *bdm);
-
 
 // ***** SEARCH FUNCTIONS *****
 // ---  Search using ID ---
 MNode *bdmatches_search_by_id(BDMatches *bdp, int id);
+
+// --- Search for id and return int if exists in bdt ---
+int id_in_bdm(BDMatches *bdm, int id);
 
 
 // ***** VALUE EXTRACTOR FUNCTIONS *****
@@ -51,10 +56,10 @@ MNode *first_node(BDMatches *bdm);
 MNode *next_node(MNode *mn);
 
 // --- change all vals to match values ---
-void match_vals(MNode *mn, int *id1, int *id2, int *goals1, int *goals2);
+void match_vals(MNode *mn, int *id, int *id1, int *id2, int *goals1, int *goals2);
 
 // --- Number of elements em bdm ---
-int len_bdm(BDMatches *bdm);
+int new_id_bdm(BDMatches *bdm);
 
 
 // ***** ARCHIVE LOADING FUNCTIONS *****
