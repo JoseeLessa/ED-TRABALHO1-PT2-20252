@@ -43,10 +43,11 @@ void delete_match(Match* p)
     free(p);
 }
 
-// --- Change match id ---
-void change_matchid(Match* p, int new_id)
+// --- Change match goals scored ---
+void update_match(Match* p, int goals1, int goals2)
 {
-    p->id = new_id;
+    p->goals_team1 =goals1;
+    p->goals_team2 = goals2;
 }
 
 
