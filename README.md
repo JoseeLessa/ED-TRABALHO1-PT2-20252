@@ -34,15 +34,6 @@ Essa ordenação possibilita uma visualização mais fiel da classificação rea
 - **Insertion Sort Aplicado:** O algoritmo do tipo Insertion Sort foi implementado para realizar a ordenação da tabela de classificação. Ele organiza os times de maneira eficiente para o volume de dados utilizado no projeto, garantindo simplicidade e boa performance para as listas de tamanho reduzido.
 ---
 
-##  Arquitetura do Código
-
-O projeto é estruturado de forma **modular**, separando a lógica principal, a interface e as funções utilitárias.
-
-###  Arquivos Principais
-
-
-
-
 ## Como Compilar e Executar
 
 ### 1. Requisitos
@@ -87,13 +78,6 @@ O programa espera encontrar os seguintes arquivos **no mesmo diretório do execu
 
 ---
 
-##  Evolução do Projeto (Próximos Passos)
-
-- [ ] **Parâmetros de Linha de Comando:**  
-  Modificar `main.c` para aceitar os nomes dos arquivos de times e partidas como argumentos de linha de comando:
-  ```bash
-  ./campeonato_gronerjose times.csv partidas.csv
-  ```
 
 
 
