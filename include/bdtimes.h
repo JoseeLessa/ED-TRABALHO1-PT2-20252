@@ -21,6 +21,9 @@ void free_bdteams(BDTeams *bdt);
 // --- Insert match result in team with node ---
 void node_add_match(Node *t, int goals1, int goals2);
 
+// --- Remove values from goals and match result ---
+void node_sub_match(Node *t, int goals_scored, int goals_conceded);
+
 
 // ***** VALUE EXTRACTOR FUNCTIONS *****
 // --- is BD Empty? ---
@@ -32,8 +35,8 @@ int bdteams_size(BDTeams *bdt);
 // --- Returns node team name ---
 char *node_team_name(Node *n);
 
-
-void print_teams(BDTeams *bdt);
+// --- Returns team name with ---
+char *team_name_by_id(BDTeams *bdt, int id);
 
 
 // ***** ARCHIVE LOADING FUNCTIONS *****
