@@ -16,8 +16,8 @@ Match *create_match(int id, int id_team1, int id_team2, int goals_team1, int goa
 // --- free memory in pointer p ---
 void delete_match(Match *p);
 
-// --- Change match id ---
-void change_matchid(Match* p, int new_id);
+// --- Change match goals scored ---
+void update_match(Match* p, int goals1, int goals2);
 
 // ***** VALUE EXTRACTOR FUNCTIONS *****
 // --- Returns match id ---
