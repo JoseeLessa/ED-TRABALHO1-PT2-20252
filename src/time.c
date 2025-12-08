@@ -65,6 +65,22 @@ void team_add_match(Team *t, int goals_scored, int goals_conceded)
     }
 }
 
+// --- Remove values from goals and match result ---
+void team_sub_match(Team *t, int goals_scored, int goals_conceded)
+{
+    t->gs -= goals_scored;
+    t->gc -= goals_conceded; 
+
+    if (goals_scored > goals_conceded) 
+    {
+        t->w--;
+    } else if (goals_scored == goals_conceded) {
+        t->d--;
+    } else {
+        t->l--;
+    }
+}
+
 // -- Add values to id and name ---
 void assign_idname(Team *team, int id, char name[])
 {
@@ -128,6 +144,20 @@ int team_points(Team *t)
     return t->w * 3 + t->d;
 }
 
+// --- Team Clone ---
+Team *clone_team(Team *t)
+{
+    Team *clone = team_create();
+    clone->id = t->id;
+    strcpy(clone->name, t->name);
+    clone->w = t->w;       
+    clone->d = t->d;       
+    clone->l = t->l;       
+    clone->gs = t->gs;
+    clone->gc = t->gc;
+    
+    return clone;
+}
 
 // ***** SORTING FUNCTIONS *****
 // --- Sort criteria ---
