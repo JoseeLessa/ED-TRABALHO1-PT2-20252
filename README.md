@@ -31,7 +31,7 @@ Número de Vitórias (V)
 Saldo de Gols (S)
 
 Essa ordenação possibilita uma visualização mais fiel da classificação real do campeonato.
-- **Insertion Sort Aplicado:** O algoritmo Insertion Sort foi implementado para realizar a ordenação da tabela de classificação. Ele organiza os times de maneira eficiente para o volume de dados utilizado no projeto, garantindo simplicidade e boa performance para vetores de tamanho reduzido.
+- **Insertion Sort Aplicado:** O algoritmo do tipo Insertion Sort foi implementado para realizar a ordenação da tabela de classificação. Ele organiza os times de maneira eficiente para o volume de dados utilizado no projeto, garantindo simplicidade e boa performance para as listas de tamanho reduzido.
 ---
 
 ##  Arquitetura do Código
