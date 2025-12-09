@@ -58,7 +58,7 @@ make run
 #### Método B — Manualmente
 Execute o binário diretamente:
 ```bash
-./campeonato_gronerjose
+gcc -Iinclude src/*.c -o programa_groner_jose
 ```
 
 ---
