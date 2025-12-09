@@ -4,14 +4,14 @@ TARGET = programa_groner_jose
 # Compilador
 CC = gcc
 
-# Flags de compilação
+# Flags
 CFLAGS = -Wall -Wextra -std=c11 -Iinclude
 
-# Diretórios
+# Pastas
 SRC_DIR = src
 OBJ_DIR = obj
 
-# Arquivos fonte
+# Fontes
 SRCS = $(SRC_DIR)/main.c \
        $(SRC_DIR)/time.c \
        $(SRC_DIR)/bdtimes.c \
@@ -19,25 +19,25 @@ SRCS = $(SRC_DIR)/main.c \
        $(SRC_DIR)/bdpartidas.c \
        $(SRC_DIR)/menu.c
 
-# Arquivos objeto (gerados em obj/)
+# Objetos
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Regra padrão
 all: $(TARGET)
 
-# Linkagem final
+# Linkagem
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-# Compilação dos .c em .o
+# Compilação
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Limpar arquivos gerados
+# Limpar
 clean:
 	rm -rf $(OBJ_DIR) $(TARGET)
 
-# Rodar o programa
+# Rodar
 run: all
 	./$(TARGET)
