@@ -56,7 +56,7 @@ make run
 ```
 
 #### Método B — Manualmente
-Execute o binário diretamente:
+Compila e gera binário:
 ```bash
 gcc -Iinclude src/*.c -o programa_groner_jose
 ```
