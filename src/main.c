@@ -8,9 +8,9 @@
 
 int main() {
     BDTeams *bdt = bdteams_create();
-    bdteams_load_csv(bdt, "entrada.txt");
+    bdteams_load_csv(bdt, "times.csv");
     BDMatches *bdm = bdmatches_create();
-    bdpartidas_load_csv(bdm, "partidas.txt");
+    bdpartidas_load_csv(bdm, "partidas/partidas_parcial.csv");
     
     bdpartidas_increase_in_team(bdm, bdt);
     
@@ -29,7 +29,8 @@ int main() {
             case '4': option_remove_match(bdm, bdt); break;
             case '5': option_insert_match(bdm, bdt); break;
             case '6': option_print_classification(bdt); break;
-            default: printf("Opção inválida, tente novamente.\n"); break;
+            case 'Q': printf("\nSaindo do programa...\n"); break;
+            default: printf("\nOpção inválida, tente novamente.\n"); break;
         }
         
         pause_screen();
